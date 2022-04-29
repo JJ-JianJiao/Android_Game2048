@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#faf8ef">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/title_linear_layout"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:id="@+id/game2048_name_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:alpha="20"
+            android:clickable="true"
+            android:text="2048"
+            android:textColor="#776e65"
+            android:textSize="70sp"
+            android:stateListAnimator="@animator/game2048_game_title_state_change"/>
+
+        <LinearLayout
+            android:id="@+id/score_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/score_best_layout_border"
+            android:layout_toRightOf="@+id/game2048_name_title_textview">
+
+            <TextView
+                android:id="@+id/lable_score_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/score"
+                android:textSize="16sp"
+                android:textColor="#bbada0"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/displaySocre_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="25sp"
+                tools:text="2048"
+                android:textColor="#bbada0"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/best_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@+id/score_linear_layout"
+            android:background="@drawable/score_best_layout_border"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lable_best_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/best"
+                android:textAlignment="center"
+                android:textColor="#bbada0"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/displayBest_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textAlignment="center"
+                android:textColor="#bbada0"
+                android:textSize="25sp"
+                tools:text="4096" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:lineSpacingExtra="8sp"
+            android:text="@string/join_the_numbers_and_get_to_the_2048_tile"/>
+
+        <Button
+            android:id="@+id/start_new_game_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/new_game_button_background"
+            android:onClick="startNewGameOnClick"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:stateListAnimator="@animator/new_game_button_state_change"
+            android:text="@string/new_game"
+            android:textColor="#f9f6f2" />
+    </LinearLayout>
+
+    <com.example.jj.game2048.GameView
+        android:id="@+id/gameMainView"
+        android:layout_width="1020px"
+        android:layout_height="1020px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:background="@drawable/game_board_layout"
+        android:layout_marginTop="30dp"
+        tools:ignore="PxUsage" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:clickable="true"
+        android:src="@android:drawable/presence_audio_away"
+        app:backgroundTint="#bbada0"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_marginRight="20dp"
+        app:borderWidth="0dp"
+        android:onClick="micOnClick"/>
+
+
+</LinearLayout>

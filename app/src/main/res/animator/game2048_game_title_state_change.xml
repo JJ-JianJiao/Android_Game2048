@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Ref:https://developer.android.com/reference/android/animation/ObjectAnimator-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <set>
+            <objectAnimator
+                android:duration="5000"
+                android:propertyName="translationZ"
+                android:valueTo="5dp"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:duration="5000"
+                android:propertyName="rotationX"
+                android:valueTo="180"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:duration="5000"
+                android:propertyName="rotationY"
+                android:valueTo="180"
+                android:valueType="floatType"/>
+        </set>
+    </item>
+
+    <item
+        android:state_pressed="false">
+        <set>
+            <objectAnimator
+                android:duration="100"
+                android:propertyName="translationZ"
+                android:valueTo="2dp"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:duration="5000"
+                android:propertyName="rotationX"
+                android:valueTo="0"
+                android:valueType="floatType"/>
+            <objectAnimator
+                android:duration="5000"
+                android:propertyName="rotationY"
+                android:valueTo="0"
+                android:valueType="floatType"/>
+        </set>
+    </item>
+</selector>
